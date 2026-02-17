@@ -14,19 +14,12 @@
   };
 
   # Enable firewall with necessary ports 
-  # Navidrome - 4533
-  # slskd - 5030, 50300
-  # qbittorrent - 6881
-  # metadata-remote - 8338
-  # Focalboard - 8000
-  # Dozzle - 8888
-
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 80 443 2222 4533 5030 50300 8080 6881 8383 ]; 
-    allowedUDPPorts = [ 50300 6881 ];
+    allowedTCPPorts = [ 2222 ]; 
+    allowedUDPPorts = [ ];
     checkReversePath = "loose"; 
-    trustedInterfaces = [ "tailscale0" ];
+    trustedInterfaces = [ "tailscale0" "wlan0" ];
   };
 
   # Fail2Ban to automatically ban sus IPs
