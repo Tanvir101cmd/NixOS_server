@@ -24,6 +24,7 @@
       fzf
       btop
       pfetch-rs
+      python3
     ];
   };
 
@@ -43,6 +44,31 @@
   # Enabling vim to be default EDITOR
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
+
+  # XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXO
+
+  # Minecraft server 
+  services.minecraft-server = {
+    enable = true;
+    eula = true;
+    declarative = true;
+
+   package = pkgs.papermcServers.papermc-1_21_10;
+
+    serverProperties = {
+      server-ip = "100.120.226.4";
+      server-port = 26565;
+      difficulty = "normal";
+      gamemode = "survival";
+      max-players = 4;
+
+      sync-chunk-writes = false;
+
+      online-mode = false;
+      };
+   };
+ 
+  # XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXO
 
   # Some shell aliases for long commands
   environment.shellAliases = {

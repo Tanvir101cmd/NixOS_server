@@ -14,12 +14,15 @@
   };
 
   # Enable firewall with necessary ports 
+  # 4533 - Navidrome
+  # 5030, 50300 - slskd
+  # 6881 = qbittorrent
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 2222 ]; 
-    allowedUDPPorts = [ ];
+    allowedTCPPorts = [ 80 443 2222 4533 5030 50300 8080 6881 8383 26565]; 
+    allowedUDPPorts = [ 50300 6881 26565 ];
     checkReversePath = "loose"; 
-    trustedInterfaces = [ "tailscale0" "wlan0" ];
+    trustedInterfaces = [ "tailscale0" ];
   };
 
   # Fail2Ban to automatically ban sus IPs
