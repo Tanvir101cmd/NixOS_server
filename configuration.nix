@@ -45,8 +45,7 @@
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
 
-  # XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXO
-
+  
   # Minecraft server 
   services.minecraft-server = {
     enable = true;
@@ -68,8 +67,7 @@
       };
    };
  
-  # XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXO
-
+ 
   # Some shell aliases for long commands
   environment.shellAliases = {
     nix-switch = "sudo nixos-rebuild switch";
